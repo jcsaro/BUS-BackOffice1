@@ -29,3 +29,15 @@ module "stacc" {
     location = module.rgshare.rgLocation
   }
 }
+
+module "keyvault" {
+  source          = "../../modules/kvault-module-az"
+  location        = var.location
+  short_company   = var.short_company
+  short_cloud     = var.short_cloud
+  resource_number = "01"
+  rg_reference = {
+    name     = module.rgshare.rgName
+    location = module.rgshare.rgLocation
+  }
+}
