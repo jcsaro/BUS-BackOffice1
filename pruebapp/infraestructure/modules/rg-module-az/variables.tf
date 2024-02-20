@@ -1,17 +1,19 @@
-variable "environment" {
-  description = "Environment Name"
-  }
-
-variable "rg_name" {
-  description = "rg-name"
-  }
-
-variable "product" {
-    description = "Product Name"
-      default = "test"
-      }
-
 variable "location" {
-        description = "Location Resource Name"
-	  default = "South Central US"
-	  }
+  description = "Location Resource Name"
+  default     = "South Central US"
+}
+variable "short_company" {
+  type        = string
+  description = "Short Name for Company"
+  default     = "OX"
+}
+variable "short_cloud" {
+  type        = string
+  description = "Short Name for Cloud Environment"
+  default     = "Z"
+}
+variable "resource_number" {
+  type        = string
+  description = "Resource Number"
+  default     = "01"
+}

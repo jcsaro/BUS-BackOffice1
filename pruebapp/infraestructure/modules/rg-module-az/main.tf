@@ -1,4 +1,4 @@
 resource "azurerm_resource_group" "rgshared" {
-  name     = "${var.rg_name}${var.product}${var.Environment}${var.short_location}shared"
-    location = var.location
-    }
+  name     = "${var.short_company}${var.short_cloud}RG${var.short_company}HD${var.resource_number}"
+  location = var.location
+}
