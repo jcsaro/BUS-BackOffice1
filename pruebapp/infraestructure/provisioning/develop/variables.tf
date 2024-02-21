@@ -8,6 +8,17 @@ variable "short_cloud" {
   description = "Short Name for Cloud Environment"
   default     = "Z"
 }
+variable "short_env" {
+  type        = string
+  description = "Short Name for Cloud Environment"
+  default     = "D"
+}
+
+variable "short_project" {
+  type        = string
+  description = "Short Name for Cloud Environment"
+  default     = "OXH"
+}
 variable "environment" {
   description = "AMBIENTE"
   type        = string

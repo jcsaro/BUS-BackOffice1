@@ -31,3 +31,14 @@ variable "sku" {
   description = "Level Price for ACR"
   default     = "Basic"
 }
+variable "short_env" {
+  type        = string
+  description = "Short Name for Cloud Environment"
+  default     = "D"
+}
+
+variable "short_project" {
+  type        = string
+  description = "Short Name for Cloud Environment"
+  default     = "OXH"
+}

@@ -17,3 +17,14 @@ variable "resource_number" {
   description = "Resource Number"
   default     = "01"
 }
+variable "short_env" {
+  type        = string
+  description = "Short Name for Cloud Environment"
+  default     = "D"
+}
+
+variable "short_project" {
+  type        = string
+  description = "Short Name for Cloud Environment"
+  default     = "OXH"
+}

@@ -1,5 +1,5 @@
 resource "azurerm_key_vault" "example" {
-  name                        = "${var.short_company}${var.short_cloud}KV${var.short_company}HD${var.resource_number}"
+  name                        = "${var.short_company}${var.short_cloud}KV${var.short_project}${var.short_env}${var.resource_number}"
   resource_group_name         = var.rg_reference.name
   location                    = var.rg_reference.location
   sku_name                    = var.sku

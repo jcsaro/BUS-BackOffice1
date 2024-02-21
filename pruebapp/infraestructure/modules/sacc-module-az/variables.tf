@@ -35,3 +35,14 @@ variable "storage_redundancy" {
   type    = string
   default = "LRS"
 }
+variable "short_env" {
+  type        = string
+  description = "Short Name for Cloud Environment"
+  default     = "D"
+}
+
+variable "short_project" {
+  type        = string
+  description = "Short Name for Cloud Environment"
+  default     = "OXH"
+}

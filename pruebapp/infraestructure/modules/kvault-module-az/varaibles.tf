@@ -12,6 +12,18 @@ variable "short_cloud" {
   description = "Short Name for Cloud Environment"
   default     = "Z"
 }
+variable "short_env" {
+  type        = string
+  description = "Short Name for Cloud Environment"
+  default     = "D"
+}
+
+variable "short_project" {
+  type        = string
+  description = "Short Name for Cloud Environment"
+  default     = "OXH"
+}
+
 variable "resource_number" {
   type        = string
   description = "Resource Number"
@@ -27,6 +39,6 @@ variable "rg_reference" {
 
 variable "sku" {
   type        = string
-  description = "Level Price for ACR"
-  default     = "Basic"
+  description = "Level Price for Key Vault"
+  default     = "standard"
 }

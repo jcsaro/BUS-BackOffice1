@@ -3,6 +3,8 @@ module "rgshare" {
   location        = var.location
   short_company   = var.short_company
   short_cloud     = var.short_cloud
+  short_env       = var.short_env
+  short_project   = var.short_project
   resource_number = "01"
 }
 
@@ -11,6 +13,8 @@ module "acrShared" {
   location        = var.location
   short_company   = var.short_company
   short_cloud     = var.short_cloud
+  short_env       = var.short_env
+  short_project   = var.short_project
   resource_number = "01"
   rg_reference = {
     name     = module.rgshare.rgName
@@ -23,6 +27,8 @@ module "stacc" {
   location        = var.location
   short_company   = var.short_company
   short_cloud     = var.short_cloud
+  short_env       = var.short_env
+  short_project   = var.short_project
   resource_number = "01"
   rg_reference = {
     name     = module.rgshare.rgName
@@ -35,6 +41,8 @@ module "keyvault" {
   location        = var.location
   short_company   = var.short_company
   short_cloud     = var.short_cloud
+  short_env       = var.short_env
+  short_project   = var.short_project
   resource_number = "01"
   rg_reference = {
     name     = module.rgshare.rgName
