@@ -12,13 +12,13 @@ on:
     branches:
     - feature/create_gha_qa
     paths:
-    - Infraestructure/Provisioning/Develop/**
+    - pruebaapp/infraestructure/provisioning/develop/**
 
 env:
   TF_CLOUD_ORGANIZATION: "BUS-BackOffice-demo"
   TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
   TF_WORKSPACE: "WEB_PDP_CAFP-Dev"
-  CONFIG_DIRECTORY: "Infraestructure/Provisioning/Develop/"
+  CONFIG_DIRECTORY: "pruebaapp/infraestructure/provisioning/develop/"
 
 jobs:
   terraform:
