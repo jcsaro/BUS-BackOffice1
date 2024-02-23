@@ -49,3 +49,10 @@ module "keyvault" {
     location = module.rgshare.rgLocation
   }
 }
+
+module "key_vault_secret_acr" {
+  source        = "./modules/kv-secret-acr-module-az"
+  acr_username  = azurerm_container_registry.example.admin_username
+  acr_password  = azurerm_container_registry.example.admin_password
+  key_vault_id  = azurerm_key_vault.example.id
+}
