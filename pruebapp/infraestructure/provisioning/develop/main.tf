@@ -51,8 +51,24 @@ module "keyvault" {
 }
 
 module "key_vault_secret_acr" {
-  source        = "./modules/kv-secret-acr-module-az"
+  source        = "../../modules/kv-secret-acr-module-az"
   acr_username  = azurerm_container_registry.example.admin_username
   acr_password  = azurerm_container_registry.example.admin_password
   key_vault_id  = azurerm_key_vault.example.id
+}
+
+module "AppServicesPlan" {
+  source          = "../../modules/appService-module-az"
+  location        = var.location
+  short_company   = var.short_company
+  short_cloud     = var.short_cloud
+  short_env       = var.short_env
+  short_project   = var.short_project
+  resource_number = "01"
+  sku_tier        = var.sku_tier
+  sku_size        = var.sku_size
+  rg_reference    = {
+    name          = module.rgshare.rgName
+    location      = module.rgshare.rgLocation
+  }
 }
