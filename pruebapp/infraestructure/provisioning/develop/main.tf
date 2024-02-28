@@ -79,5 +79,16 @@ module "AppServicesPlan" {
 
 module "AppServices1" {
   source          = "../../modules/appService-module-az"
-
+  location        = var.location
+  short_company   = var.short_company
+  short_cloud     = var.short_cloud
+  short_env       = var.short_env
+  short_project   = var.short_project
+  resource_number = "01"
+  app_service_plan_name = module.app_service_plan.app_service_plan_name
+  sku                   = module.app_service_plan.app_service_plan_sku 
+  rg_reference    = {
+    name          = module.rgshare.rgName
+    location      = module.rgshare.rgLocation
+  }
 }
