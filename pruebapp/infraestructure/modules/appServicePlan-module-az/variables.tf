@@ -39,7 +39,7 @@ variable "rg_reference" {
 
 variable "sku_tier" {
   description = "Tier del SKU del plan"
-  default     = "standar"
+  default     = "standard"
 }
 
 variable "sku_size" {

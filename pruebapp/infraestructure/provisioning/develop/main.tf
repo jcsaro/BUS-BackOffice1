@@ -76,3 +76,8 @@ module "AppServicesPlan" {
     location      = module.rgshare.rgLocation
   }
 }
+
+module "AppServices1" {
+  source          = "../../modules/appService-module-az"
+
+}
