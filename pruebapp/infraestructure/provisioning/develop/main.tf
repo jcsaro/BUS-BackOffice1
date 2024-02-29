@@ -97,3 +97,17 @@ module "AppServices1" {
   principal_resource_location_acronym = var.short_cloud
 
 }
+
+module "vnet" {
+  source          = "../../modules/vnet-module-az"
+  address_space       = ["10.0.0.0/16"] #pendiente las direcciones
+  resource_number = "01"
+  rg_reference = {
+    name     = module.rgshare.rgName
+    location = module.rgshare.rgLocation
+  }
+  public_subnet_name      = "public-subnet"
+  public_subnet_prefixes  = ["10.0.1.0/24"]#pendiente las direcciones
+  private_subnet_name     = "private-subnet"
+  private_subnet_prefixes = ["10.0.2.0/24"]#pendiente las direcciones
+}
