@@ -41,19 +41,29 @@ variable "short_project" {
 variable "address_space" {
   description = "Address space for the virtual network"
 }
-
+/*
 variable "public_subnet_name" {
   description = "Name of the public subnet"
 }
 
 variable "public_subnet_prefixes" {
   description = "Address prefixes for the public subnet"
+}*/
+
+variable "private_subnet_names" {
+  description = "Name of the private subnet"
+  type = list(string)
+  default = [] 
 }
 
-variable "private_subnet_name" {
+variable "private_subnet_names_types" {
   description = "Name of the private subnet"
+  type = list(string)
+  default = []
 }
 
 variable "private_subnet_prefixes" {
   description = "Address prefixes for the private subnet"
+  type = list(string)
+  default = []
 }

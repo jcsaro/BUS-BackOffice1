@@ -1,12 +1,13 @@
-module "rgshare" {
-  source          = "../../modules/rg-module-az"
-  location        = var.location
-  short_company   = var.short_company
-  short_cloud     = var.short_cloud
-  short_env       = var.short_env
-  short_project   = var.short_project
-  resource_number = "01"
-}
+
+#module "rgshare" {
+#  source          = "../../modules/rg-module-az"
+#  location        = var.location
+#  short_company   = var.short_company
+#  short_cloud     = var.short_cloud
+#  short_env       = var.short_env
+#  short_project   = var.short_project
+#  resource_number = "01"
+#}
 
 module "acrShared" {
   source          = "../../modules/acr-module-az"
@@ -17,8 +18,8 @@ module "acrShared" {
   short_project   = var.short_project
   resource_number = "01"
   rg_reference = {
-    name     = module.rgshare.rgName
-    location = module.rgshare.rgLocation
+    name     = var.rg_name
+    location = var.location
   }
 }
 
@@ -31,8 +32,8 @@ module "stacc" {
   short_project   = var.short_project
   resource_number = "01"
   rg_reference = {
-    name     = module.rgshare.rgName
-    location = module.rgshare.rgLocation
+    name     = var.rg_name
+    location = var.location
   }
 }
 
@@ -45,8 +46,8 @@ module "keyvault" {
   short_project   = var.short_project
   resource_number = "01"
   rg_reference = {
-    name     = module.rgshare.rgName
-    location = module.rgshare.rgLocation
+    name     = var.rg_name
+    location = var.location
   }
 }
 
@@ -71,8 +72,8 @@ module "AppServicesPlan" {
   resource_number = "01"
   sku_name = "Pv1"
   rg_reference    = {
-    name          = module.rgshare.rgName
-    location      = module.rgshare.rgLocation
+    name          = var.rg_name
+    location      = var.location
   }
 }
 
@@ -88,7 +89,7 @@ module "AppServices1" {
   container_registry_loginserver = module.acrShared.url
   principal_resource_location = var.location
   environment = var.short_env
-  resource_group_name =  module.rgshare.rgName
+  resource_group_name =  var.rg_name
   tags_mandatory = {
     "SupportBy"= "DevOps-Julio"
   }
@@ -103,11 +104,12 @@ module "vnet" {
   address_space       = ["10.0.0.0/16"] #pendiente las direcciones
   resource_number = "01"
   rg_reference = {
-    name     = module.rgshare.rgName
-    location = module.rgshare.rgLocation
+    name     = var.rg_name
+    location = var.location
   }
-  public_subnet_name      = "public-subnet"
-  public_subnet_prefixes  = ["10.0.1.0/24"]#pendiente las direcciones
-  private_subnet_name     = "private-subnet"
-  private_subnet_prefixes = ["10.0.2.0/24"]#pendiente las direcciones
+  #public_subnet_name      = "public-subnet"
+  #public_subnet_prefixes  = ["10.0.1.0/24"]#pendiente las direcciones
+  private_subnet_names_types = ["AP", "WS", "DB"]
+  private_subnet_names       = ["private-subnet"]
+  private_subnet_prefixes    = ["10.0.2.0/24"]#pendiente las direcciones
 }
