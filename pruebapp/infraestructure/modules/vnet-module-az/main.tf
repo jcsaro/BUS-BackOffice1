@@ -12,6 +12,7 @@ resource "azurerm_subnet" "public" {
   address_prefixes     = var.public_subnet_prefixes
 }
 */
+
 resource "azurerm_subnet" "private" {
   count = length(private_subnet_names)
   name                 = "${var.short_company}${var.short_cloud}NET${var.short_project}${var.short_env}${var.private_subnet_names_types[count.index]}${var.resource_number}"
