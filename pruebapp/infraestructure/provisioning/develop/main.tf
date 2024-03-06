@@ -107,9 +107,6 @@ module "vnet" {
     name     = var.rg_name
     location = var.location
   }
-  #public_subnet_name      = "public-subnet"
-  #public_subnet_prefixes  = ["10.0.1.0/24"]#pendiente las direcciones
   private_subnet_names_types = ["AP", "WS", "DB"]
-  private_subnet_names       = ["private-subnet"]
-  private_subnet_prefixes    = ["10.0.2.0/24"]#pendiente las direcciones
+  private_subnet_prefixes    = ["172.26.250.32/27","172.26.250.96/27", "172.26.253.160/28"]#pendiente las direcciones
 }
