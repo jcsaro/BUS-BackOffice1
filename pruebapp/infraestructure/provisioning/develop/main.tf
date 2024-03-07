@@ -131,8 +131,6 @@ module "DB_OXHE" {
   short_env       = var.short_env
   short_project   = var.short_project
   server_numberid = ["01", "02"]
-  admin_username = "admin"
-  admin_password = "4dM1n0Xx0*_2024"
   rg_reference = {
     name     = var.rg_name
     location = var.location
