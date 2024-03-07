@@ -70,13 +70,15 @@ variable "sku_name" {
 }
 
 variable "nat_gateway_id" {
-  type        = string
   description = "ID of the nat"
+  type = list(string)
+  default = []
 }
 
 variable "public_ip_address_id" {
-  type = string
   description = "ID of the IP"
+  type = list(string)
+  default = []
 }
 
 variable "allocation_method" {
@@ -86,11 +88,13 @@ variable "allocation_method" {
 }
 
 variable "subnet_id" {
-  type = string
   description = "id of subnet"
+  type = list(string)
+  default = []
 }
 
 variable "public_ip_address_id" {
-  type = string
   description = "id of IP"
+  type = list(string)
+  default = []
 }

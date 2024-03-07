@@ -9,3 +9,12 @@ variable "secret_name" {
 variable "key_vault_id" {
   description = "key Vault ID"
 }
+
+variable "secret_value_db" {
+  description = "passwd db"
+  type        = string
+}
+variable "secret_name_db" {
+  description = "passwd db"
+  type        = string
+}

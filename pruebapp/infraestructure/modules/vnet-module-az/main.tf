@@ -21,7 +21,7 @@ resource "azurerm_nat_gateway" "natOXHE" {
 }
 resource "azurerm_nat_gateway_public_ip_association" "example" {
   count = length(private_subnet_names_types)
-  nat_gateway_id       = azurerm_nat_gateway.natOXHE[count.index]
+  nat_gateway_id       = azurerm_nat_gateway.natOXHE[count.index].id
   public_ip_address_id = azurerm_public_ip.nat_public_ip[count.index].id
 }
 

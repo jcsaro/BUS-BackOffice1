@@ -51,16 +51,23 @@ module "keyvault" {
   }
 }
 
-module "key_vault_secret_acr" {
+module "secrets" {
   source        = "../../modules/kv-secret-module-az"
   secret_name = "acr${var.short_project}${var.short_env}"
+  secret_name_db = "DB${var.short_project}${var.short_env}"
   key_vault_id = module.keyvault.key_vault_id
+  
   secret_value = jsonencode({
     username  = "Username"#module.acrShared.admin_user
     password  = "password"#module.acrShared.admin_pass
   })
-}
 
+  secret_value_db = jsonencode({
+    username  = "Username" #module.DB_OXHE.administrator_login
+    password  = "password" #module.DB_OXHE.administrator_login_password
+  })
+
+}
 
 module "AppServicesPlan" {
   source          = "../../modules/appServicePlan-module-az"
@@ -99,9 +106,8 @@ module "AppServices1" {
 
 }
 
-module "network_base" {
+module "vnetOXHE" {
   source          = "../../modules/vnet-module-az"
-  address_space       = ["10.0.0.0/16"] #pendiente las direcciones
   resource_number = "01"
   rg_reference = {
     name     = var.rg_name
@@ -115,4 +121,20 @@ module "network_base" {
   idle_timeout_in_minutes    = 10
   public_ip_name             = var.public_ip_name
   bastion_private_subnet_names_types = ["S1", "S2", "S3"]
+}
+
+module "DB_OXHE" {
+  source          = "../../modules/db-module-az"
+  location        = var.location
+  short_company   = var.short_company
+  short_cloud     = var.short_cloud
+  short_env       = var.short_env
+  short_project   = var.short_project
+  server_numberid = ["01", "02"]
+  admin_username = "admin"
+  admin_password = "4dM1n0Xx0*_2024"
+  rg_reference = {
+    name     = var.rg_name
+    location = var.location
+  }
 }
