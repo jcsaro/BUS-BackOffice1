@@ -62,3 +62,35 @@ variable "private_subnet_prefixes" {
   type = list(string)
   default = []
 }
+
+variable "sku_name" {
+  type        = string
+  description = "capacity of the nat"
+  default     = "standard"
+}
+
+variable "nat_gateway_id" {
+  type        = string
+  description = "ID of the nat"
+}
+
+variable "public_ip_address_id" {
+  type = string
+  description = "ID of the IP"
+}
+
+variable "allocation_method" {
+  type = string
+  description = "ALLOCATION METHOD"
+  default     = "Static"
+}
+
+variable "subnet_id" {
+  type = string
+  description = "id of subnet"
+}
+
+variable "public_ip_address_id" {
+  type = string
+  description = "id of IP"
+}

@@ -18,7 +18,6 @@ resource "azurerm_nat_gateway" "natOXHE" {
   location                = var.rg_reference.location
   resource_group_name     = var.rg_reference.name
   sku_name                = var.sku_name
-  idle_timeout_in_minutes = var.idle_timeout_in_minutes
 }
 resource "azurerm_nat_gateway_public_ip_association" "example" {
   count = length(private_subnet_names_types)
