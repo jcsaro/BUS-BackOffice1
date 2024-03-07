@@ -99,7 +99,7 @@ module "AppServices1" {
 
 }
 
-module "vnet" {
+module "network_base" {
   source          = "../../modules/vnet-module-az"
   address_space       = ["10.0.0.0/16"] #pendiente las direcciones
   resource_number = "01"
