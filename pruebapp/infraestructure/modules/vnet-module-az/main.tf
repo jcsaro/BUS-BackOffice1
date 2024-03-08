@@ -30,7 +30,7 @@ resource "azurerm_public_ip" "nat_public_ip" {
   name                = var.public_ip_name[count.index]
   location            = var.rg_reference.location
   resource_group_name = var.rg_reference.name
-  allocation_method   = "Static"
+  allocation_method   = var.allocation_method
 }
 
 resource "azurerm_public_ip" "bastion_public_ip" {
@@ -38,13 +38,13 @@ resource "azurerm_public_ip" "bastion_public_ip" {
   name                = var.public_ip_name_bastion[count.index]
   location            = var.rg_reference.location
   resource_group_name = var.rg_reference.name
-  allocation_method   = "Static"
+  allocation_method   = var.allocation_method
 }
 
 
 resource "azurerm_bastion_host" "BastionOXHE" {
   count = length(bastion_private_subnet_names_types)
-  name                = "${var.short_company}${var.short_cloud}BA${var.short_project}${var.short_env}${var.bastion_subnet[count.index]}${var.resource_number}"
+  name                = "${var.short_company}${var.short_cloud}BA${var.short_project}${var.short_env}${var.bastion_private_subnet_names_types[count.index]}${var.resource_number}"
   location            = var.rg_reference.location
   resource_group_name = var.rg_reference.name
   ip_configuration {

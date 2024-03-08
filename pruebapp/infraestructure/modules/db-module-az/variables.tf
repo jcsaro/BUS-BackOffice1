@@ -55,12 +55,12 @@ variable "version" {
 }
 
 variable "admin_username" {
-  type        = string
+  type        = list(string)
   
 }
 
 variable "admin_password" {
-  type        = string
+  type        = list(string)
 }
 
 variable "public_network_access_enabled" {

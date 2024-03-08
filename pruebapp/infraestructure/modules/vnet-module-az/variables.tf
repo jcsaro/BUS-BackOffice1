@@ -40,6 +40,8 @@ variable "short_project" {
 
 variable "address_space" {
   description = "Address space for the virtual network"
+  type = list(string)
+  default = [ "10.0.0.0/8" ]
 }
 /*
 variable "public_subnet_name" {
@@ -69,16 +71,15 @@ variable "sku_name" {
   default     = "standard"
 }
 
-variable "nat_gateway_id" {
-  description = "ID of the nat"
-  type = list(string)
-  default = []
+variable "public_ip_name" {
+  type        = list(string)
+  description = "capacity of the nat"
+  default     = []
 }
-
-variable "public_ip_address_id" {
-  description = "ID of the IP"
-  type = list(string)
-  default = []
+variable "public_ip_name_bastion" {
+  type        = list(string)
+  description = "capacity of the nat"
+  default     = []
 }
 
 variable "allocation_method" {
@@ -87,14 +88,9 @@ variable "allocation_method" {
   default     = "Static"
 }
 
-variable "subnet_id" {
-  description = "id of subnet"
-  type = list(string)
-  default = []
-}
 
-variable "public_ip_address_id" {
-  description = "id of IP"
+variable "bastion_private_subnet_names_types"{
   type = list(string)
+  description = "Bastion names Types" 
   default = []
-}
+} 
