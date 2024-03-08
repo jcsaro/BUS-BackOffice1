@@ -2,6 +2,6 @@ output "dbIDs" {
   value = azurerm_postgresql_server.DB_OXHE.*.id
 }
 
-output "dbIDs" {
+output "fdqns" {
   value = azurerm_postgresql_server.DB_OXHE.*.fdqn
 }

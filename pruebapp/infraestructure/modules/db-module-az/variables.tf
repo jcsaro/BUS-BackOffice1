@@ -46,12 +46,12 @@ variable "server_numberid" {
 variable "sku_name" {
   type        = string
   description = "capacity of DB"
-  default     = "GP_Gen5_2"
+  default     = "GP_Gen5_2_D2ds_v5"
 }
 
 variable "version" {
   type        = string
-  default     = "11"
+  default     = "12"
 }
 
 variable "admin_username" {
@@ -78,3 +78,8 @@ variable "ssl_enforcement_enabled" {
   default     = "true"
 }
 
+variable "delegated_subnet_id" {
+  description = "ID_Subnet"
+  type = list(string)
+  default = []
+}

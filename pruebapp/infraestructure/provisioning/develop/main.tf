@@ -153,8 +153,9 @@ module "DB_OXHE" {
   short_cloud     = var.short_cloud
   short_env       = var.short_env
   short_project   = var.short_project
+  delegated_subnet_id = module
   server_numberid = ["01", "02"]
-  admin_username  = "psqladmin"
+  admin_username  = ["psqlad1", "psqlad2"]
   admin_password  = [random_password.password.result, random_password.password2.result]
   rg_reference = {
     name     = var.rg_name
