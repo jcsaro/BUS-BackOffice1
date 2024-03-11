@@ -1,7 +1,7 @@
 output "dbIDs" {
-  value = azurerm_postgresql_server.DB_OXHE.*.id
+  value = azurerm_postgresql_flexible_server.DBOXHE.*.id
 }
 
 output "fdqns" {
-  value = azurerm_postgresql_server.DB_OXHE.*.fdqn
+  value = azurerm_postgresql_flexible_server.DBOXHE.*.fdqn
 }

@@ -54,14 +54,14 @@ variable "public_subnet_prefixes" {
 
 
 variable "private_subnet_names_types" {
-  description = "Name of the private subnet"
   type = list(string)
+  description = "Name of the private subnet"
   default = []
 }
 
 variable "private_subnet_prefixes" {
-  description = "Address prefixes for the private subnet"
   type = list(string)
+  description = "Address prefixes for the private subnet"
   default = []
 }
 

@@ -49,18 +49,19 @@ variable "sku_name" {
   default     = "GP_Gen5_2_D2ds_v5"
 }
 
-variable "version" {
-  type        = string
+variable "db_version" {
+  type        = number
   default     = "12"
 }
 
 variable "admin_username" {
   type        = list(string)
-  
-}
+  default = []
+  }
 
 variable "admin_password" {
   type        = list(string)
+  default = []
 }
 
 variable "public_network_access_enabled" {
@@ -74,12 +75,12 @@ variable "storage_mb" {
 }
 
 variable "ssl_enforcement_enabled" {
-  type        = bool
+  type        = string
   default     = "true"
 }
 
 variable "delegated_subnet_id" {
+  type = string
   description = "ID_Subnet"
-  type = list(string)
-  default = []
+  
 }
