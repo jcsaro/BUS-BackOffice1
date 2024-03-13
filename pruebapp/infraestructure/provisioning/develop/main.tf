@@ -142,7 +142,7 @@ module "vnetOXHE" {
   private_subnet_names_types         = ["AP", "WS", "DB"]
   private_subnet_prefixes            = ["172.26.250.32/27", "172.26.250.96/27", "172.26.253.160/28"]
   public_ip_name                     = ["ipnat01", "ipnat02", "ipnat03"]
-  bastion_private_subnet_names_types = ["S1", "S2", "S3"]
+ #bastion_private_subnet_names_types = ["S1", "S2", "S3"]
 }
 
 module "DBOXHE" {
