@@ -37,12 +37,8 @@ variable "rg_reference" {
   })
 }
 
-variable "sku_tier" {
-  description = "Tier del SKU del plan"
-  default     = "standar"
-}
-
-variable "sku_size" {
-  description = "Tamaño del SKU del plan"
-  default     = "s1"
+variable "sku_name" {
+  type        = string
+  description = "Nombre del sku"
+  default     = "P1v2"
 }

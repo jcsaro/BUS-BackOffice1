@@ -11,5 +11,5 @@ output "app_service_plan_location" {
 }
 
 output "app_service_plan_sku" {
-  value = azurerm_app_service_plan.app_service_plan.sku
+  value = azurerm_app_service_plan.app_service_plan.sku_name
 }

@@ -28,6 +28,11 @@ variable "location" {
   description = "Location Resource Name"
 
 }
+
+variable "rg_name" {
+  description = "Resource Group Name"
+
+}
 variable "subnet_name1" {
   description = "subnet1"
 
