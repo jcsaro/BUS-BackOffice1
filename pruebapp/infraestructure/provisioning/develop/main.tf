@@ -113,7 +113,7 @@ module "AppServices1" {
   source                         = "../../modules/appService-module-az"
   webapp_name                    = "app-service-name"
   name_microservices_api         = "prueba ms"
-  always_on                      = "true"
+  always_on                      = true
   image_name                     = "pruebadockerimage"
   container_registry_pwd         = module.secret_acr.secretID
   key_vault_id                   = module.keyvault.key_vault_id
@@ -123,6 +123,8 @@ module "AppServices1" {
   environment                    = var.short_env
   resource_group_name            = var.rg_name
   service_plan_id                = module.AppServicesPlan.app_service_plan_id
+  subnet_id                      = module.vnetOXHE.private_subnet_ids[0]
+  enable_subnet_integration      = true
   tags_mandatory = {
     "SupportBy" = "DevOps-Julio"
   }

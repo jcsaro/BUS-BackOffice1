@@ -3,5 +3,5 @@ output "dbIDs" {
 }
 
 output "fdqns" {
-  value = azurerm_postgresql_flexible_server.DBOXHE.*.fdqn
+  value = azurerm_postgresql_flexible_server.DBOXHE.*.fqdn
 }

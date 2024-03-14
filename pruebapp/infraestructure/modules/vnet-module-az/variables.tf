@@ -68,7 +68,7 @@ variable "private_subnet_prefixes" {
 variable "sku_name" {
   type        = string
   description = "capacity of the nat"
-  default     = "standard"
+  default     = "Standard"
 }
 
 variable "public_ip_name" {

@@ -46,7 +46,7 @@ variable "server_numberid" {
 variable "sku_name" {
   type        = string
   description = "capacity of DB"
-  default     = "GP_Gen5_2_D2ds_v5"
+  default     = "GP_Standard_D2ds_v5"
 }
 
 variable "db_version" {
@@ -71,7 +71,7 @@ variable "public_network_access_enabled" {
 
 variable "storage_mb" {
   type        = string
-  default     = "500000"
+  default     = "524288"
 }
 
 variable "ssl_enforcement_enabled" {
