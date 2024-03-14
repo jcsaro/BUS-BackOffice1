@@ -445,7 +445,7 @@ resource "azurerm_key_vault_access_policy" "ap-app-accesscontrol-slot-secondary"
   ]
 }
 
-
+/*
 locals {
   api_management_enabled = var.api_management_name != null
 }
@@ -512,7 +512,7 @@ resource "azurerm_api_management_product_api" "app_service_full_api_product" {
   api_management_name = var.api_management_name
   resource_group_name = var.api_management_resource_group_name
 }
-
+*/
 resource "azurerm_cdn_frontdoor_origin_group" "cdn_origin_group" {
   count                    = var.enable_hight_availability ? 1 : 0
   name                     = var.webapp_name
