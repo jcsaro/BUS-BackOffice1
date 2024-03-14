@@ -111,7 +111,7 @@ module "AppServicesPlan" {
 
 module "AppServices1" {
   source                         = "../../modules/appService-module-az"
-  webapp_name                    = "app service name"
+  webapp_name                    = "app-service-name"
   name_microservices_api         = "prueba ms"
   always_on                      = "true"
   image_name                     = "pruebadockerimage"
@@ -122,6 +122,7 @@ module "AppServices1" {
   principal_resource_location    = var.location
   environment                    = var.short_env
   resource_group_name            = var.rg_name
+  service_plan_id                = module.AppServicesPlan.app_service_plan_id
   tags_mandatory = {
     "SupportBy" = "DevOps-Julio"
   }
